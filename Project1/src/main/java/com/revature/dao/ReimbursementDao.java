@@ -244,7 +244,7 @@ public class ReimbursementDao {
     }
 
 
-    public List<Reimbursement> getAllReimbursementsById(int userId) throws SQLException {
+    public List<Reimbursement> getAllReimbursementsByUserId(int userId) throws SQLException {
 
         try(Connection con = ConnectionUtility.getConnection()){
 

@@ -948,3 +948,321 @@ java.lang.NullPointerException: null
 24 03 2022 - 12:59:01.125 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
 24 03 2022 - 12:59:01.347 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
 24 03 2022 - 12:59:01.347 [main] INFO  io.javalin.Javalin - Javalin started in 235ms \o/
+26 03 2022 - 20:14:51.437 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 20:14:51.447 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @328ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 20:14:51.448 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 20:14:51.464 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 20:14:51.719 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 20:14:51.719 [main] INFO  io.javalin.Javalin - Javalin started in 272ms \o/
+26 03 2022 - 20:15:07.157 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 20:15:07.157 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 20:15:07.304 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 20:15:07.619 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 20:15:07.644 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 20:15:35.163 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 20:15:35.163 [JettyServerThreadPool-16] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 20:15:35.163 [JettyServerThreadPool-16] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 20:15:35.186 [JettyServerThreadPool-16] WARN  c.r.C.ReimbursementController - A non manager user tried to retrieve all reimbursements. user: jane2
+26 03 2022 - 20:16:31.589 [JettyServerThreadPool-18] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 20:16:31.589 [JettyServerThreadPool-18] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 20:16:31.589 [JettyServerThreadPool-18] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+26 03 2022 - 20:16:31.617 [JettyServerThreadPool-18] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+26 03 2022 - 20:16:31.619 [JettyServerThreadPool-18] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+26 03 2022 - 20:16:43.271 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 20:16:43.271 [JettyServerThreadPool-27] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 20:16:43.271 [JettyServerThreadPool-27] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 20:16:43.273 [JettyServerThreadPool-27] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+26 03 2022 - 20:46:32.060 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 20:46:32.070 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @287ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 20:46:32.071 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 20:46:32.085 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 20:46:32.329 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 20:46:32.329 [main] INFO  io.javalin.Javalin - Javalin started in 259ms \o/
+26 03 2022 - 20:47:07.164 [JettyServerThreadPool-25] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 20:47:07.164 [JettyServerThreadPool-25] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 20:47:07.294 [JettyServerThreadPool-25] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+26 03 2022 - 20:47:07.582 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+26 03 2022 - 20:47:07.605 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+26 03 2022 - 20:47:16.602 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 20:47:16.602 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 20:47:16.602 [JettyServerThreadPool-15] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 20:47:16.655 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+26 03 2022 - 20:48:55.384 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 20:48:55.384 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 20:48:55.384 [JettyServerThreadPool-17] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 20:48:55.420 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+26 03 2022 - 22:14:44.439 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 22:14:44.446 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @266ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 22:14:44.447 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 22:14:44.459 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 22:14:44.704 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 22:14:44.704 [main] INFO  io.javalin.Javalin - Javalin started in 258ms \o/
+26 03 2022 - 22:16:00.795 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:16:00.795 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:16:00.920 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+26 03 2022 - 22:16:01.205 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+26 03 2022 - 22:16:01.229 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+26 03 2022 - 22:16:25.672 [JettyServerThreadPool-14] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:16:25.672 [JettyServerThreadPool-14] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:16:25.672 [JettyServerThreadPool-14] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:16:25.691 [JettyServerThreadPool-14] WARN  c.r.C.ReimbursementController - A non employee user tried to retrieve all reimbursements for employee : 2. Non employee user: samuel1
+26 03 2022 - 22:17:12.838 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:17:12.838 [JettyServerThreadPool-16] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:17:12.838 [JettyServerThreadPool-16] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 22:17:12.867 [JettyServerThreadPool-16] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 22:17:12.868 [JettyServerThreadPool-16] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 22:17:20.267 [JettyServerThreadPool-27] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:17:20.267 [JettyServerThreadPool-27] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:17:20.267 [JettyServerThreadPool-27] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:17:20.268 [JettyServerThreadPool-27] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 2
+26 03 2022 - 22:17:50.266 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 22:17:50.276 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @278ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 22:17:50.277 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 22:17:50.290 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 22:17:50.528 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 22:17:50.528 [main] INFO  io.javalin.Javalin - Javalin started in 251ms \o/
+26 03 2022 - 22:18:02.193 [JettyServerThreadPool-25] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:18:02.194 [JettyServerThreadPool-25] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:18:02.321 [JettyServerThreadPool-25] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 22:18:02.609 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 22:18:02.632 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 22:18:19.906 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:18:19.907 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:18:19.907 [JettyServerThreadPool-17] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:18:19.926 [JettyServerThreadPool-17] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 2
+26 03 2022 - 22:18:24.651 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 22:18:24.651 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 22:18:24.651 [JettyServerThreadPool-15] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:18:24.653 [JettyServerThreadPool-15] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+26 03 2022 - 22:18:24.684 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+26 03 2022 - 22:19:53.412 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 22:19:53.420 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @275ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 22:19:53.420 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 22:19:53.432 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 22:19:53.655 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 22:19:53.655 [main] INFO  io.javalin.Javalin - Javalin started in 235ms \o/
+26 03 2022 - 22:20:18.996 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:20:18.996 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:20:19.121 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: Samuel1
+26 03 2022 - 22:20:19.402 [JettyServerThreadPool-26] WARN  c.r.Controller.ExceptionController - The username or password attempted were invalid. Exception message: Invalid username or password
+26 03 2022 - 22:20:47.206 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:20:47.206 [JettyServerThreadPool-13] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:20:47.206 [JettyServerThreadPool-13] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+26 03 2022 - 22:20:47.239 [JettyServerThreadPool-13] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+26 03 2022 - 22:20:47.265 [JettyServerThreadPool-13] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+26 03 2022 - 22:20:58.042 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 22:20:58.042 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 22:20:58.042 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:20:58.060 [JettyServerThreadPool-19] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+26 03 2022 - 22:20:58.093 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+26 03 2022 - 22:21:11.680 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:21:11.680 [JettyServerThreadPool-23] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:21:11.680 [JettyServerThreadPool-23] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 22:21:11.706 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 22:21:11.708 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 22:21:22.328 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 22:21:22.328 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 22:21:22.328 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:21:22.330 [JettyServerThreadPool-19] WARN  c.r.C.ReimbursementController - A non manager user tried to retrieve all reimbursements. user: jane2
+26 03 2022 - 22:21:28.458 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:21:28.459 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:21:28.459 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:21:28.460 [JettyServerThreadPool-23] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 2
+26 03 2022 - 22:21:31.848 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements
+26 03 2022 - 22:21:31.849 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+26 03 2022 - 22:21:31.849 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:21:31.849 [JettyServerThreadPool-19] WARN  c.r.C.ReimbursementController - A non manager user tried to retrieve all reimbursements. user: jane2
+26 03 2022 - 22:21:34.313 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:21:34.313 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:21:34.313 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:21:34.314 [JettyServerThreadPool-23] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 2
+26 03 2022 - 22:21:44.506 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 22:21:44.514 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @301ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 22:21:44.515 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 22:21:44.528 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 22:21:44.754 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 22:21:44.754 [main] INFO  io.javalin.Javalin - Javalin started in 239ms \o/
+26 03 2022 - 22:26:40.708 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:26:40.708 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:26:40.839 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 22:26:41.114 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 22:26:41.136 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 22:29:05.560 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:29:05.560 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:29:05.561 [JettyServerThreadPool-17] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:29:05.581 [JettyServerThreadPool-17] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 2
+26 03 2022 - 22:34:56.982 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+26 03 2022 - 22:34:56.991 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @281ms to org.eclipse.jetty.util.log.Slf4jLog
+26 03 2022 - 22:34:56.991 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+26 03 2022 - 22:34:57.005 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+26 03 2022 - 22:34:57.211 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+26 03 2022 - 22:34:57.212 [main] INFO  io.javalin.Javalin - Javalin started in 221ms \o/
+26 03 2022 - 22:35:10.609 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+26 03 2022 - 22:35:10.609 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+26 03 2022 - 22:35:10.736 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+26 03 2022 - 22:35:11.018 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+26 03 2022 - 22:35:11.040 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:jane2
+26 03 2022 - 22:35:22.554 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+26 03 2022 - 22:35:22.554 [JettyServerThreadPool-13] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+26 03 2022 - 22:35:22.554 [JettyServerThreadPool-13] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+26 03 2022 - 22:35:22.573 [JettyServerThreadPool-13] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+26 03 2022 - 22:35:22.607 [JettyServerThreadPool-13] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+27 03 2022 - 15:47:04.443 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+27 03 2022 - 15:47:04.452 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @317ms to org.eclipse.jetty.util.log.Slf4jLog
+27 03 2022 - 15:47:04.453 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+27 03 2022 - 15:47:04.470 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+27 03 2022 - 15:47:04.695 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+27 03 2022 - 15:47:04.695 [main] INFO  io.javalin.Javalin - Javalin started in 243ms \o/
+27 03 2022 - 15:47:15.445 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+27 03 2022 - 15:47:15.446 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+27 03 2022 - 15:47:15.578 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+27 03 2022 - 15:47:15.884 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+27 03 2022 - 15:47:15.905 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+27 03 2022 - 15:47:29.828 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+27 03 2022 - 15:47:29.828 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+27 03 2022 - 15:47:29.828 [JettyServerThreadPool-15] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:47:29.848 [JettyServerThreadPool-15] WARN  c.r.C.ReimbursementController - A non employee user tried to retrieve all reimbursements of an employee. user: samuel1
+27 03 2022 - 15:47:39.907 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /login
+27 03 2022 - 15:47:39.907 [JettyServerThreadPool-19] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+27 03 2022 - 15:47:39.907 [JettyServerThreadPool-19] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+27 03 2022 - 15:47:39.936 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+27 03 2022 - 15:47:39.937 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Jws created for username:jane2
+27 03 2022 - 15:47:48.202 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+27 03 2022 - 15:47:48.202 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+27 03 2022 - 15:47:48.202 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:47:48.204 [JettyServerThreadPool-23] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+27 03 2022 - 15:47:48.240 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+27 03 2022 - 15:48:08.260 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /employees/3/reimbursements
+27 03 2022 - 15:48:08.261 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 3
+27 03 2022 - 15:48:08.261 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:48:08.261 [JettyServerThreadPool-19] WARN  c.r.C.ReimbursementController - The employee: null. user tried to retrieve all reimbursements for employee : 3
+27 03 2022 - 15:48:12.898 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+27 03 2022 - 15:48:12.899 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+27 03 2022 - 15:48:12.899 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:48:12.900 [JettyServerThreadPool-23] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+27 03 2022 - 15:48:12.929 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+27 03 2022 - 15:52:14.930 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+27 03 2022 - 15:52:14.938 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @268ms to org.eclipse.jetty.util.log.Slf4jLog
+27 03 2022 - 15:52:14.939 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+27 03 2022 - 15:52:14.951 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+27 03 2022 - 15:52:15.153 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+27 03 2022 - 15:52:15.154 [main] INFO  io.javalin.Javalin - Javalin started in 215ms \o/
+27 03 2022 - 15:53:42.534 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - POST request received for /login
+27 03 2022 - 15:53:42.534 [JettyServerThreadPool-26] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+27 03 2022 - 15:53:42.661 [JettyServerThreadPool-26] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+27 03 2022 - 15:53:42.949 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+27 03 2022 - 15:53:42.973 [JettyServerThreadPool-26] INFO  com.revature.service.JWTService - Jws created for username:jane2
+27 03 2022 - 15:53:54.185 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - POST request received for /employees/2/reimbursements
+27 03 2022 - 15:53:54.185 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - Trying to add a reimbursement for employee: 2
+27 03 2022 - 15:53:54.185 [JettyServerThreadPool-17] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:54:00.203 [JettyServerThreadPool-23] INFO  com.revature.main.Driver - POST request received for /employees/3/reimbursements
+27 03 2022 - 15:54:00.204 [JettyServerThreadPool-23] INFO  c.r.C.ReimbursementController - Trying to add a reimbursement for employee: 3
+27 03 2022 - 15:54:00.204 [JettyServerThreadPool-23] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 15:54:00.205 [JettyServerThreadPool-23] WARN  c.r.C.ReimbursementController - The employee: null. Tried to add a reimbursement for employee : 3
+27 03 2022 - 15:54:08.863 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /employees/2/reimbursements
+27 03 2022 - 15:54:08.864 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to add a reimbursement for employee: 2
+27 03 2022 - 15:54:08.864 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 16:09:44.386 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+27 03 2022 - 16:09:44.393 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @269ms to org.eclipse.jetty.util.log.Slf4jLog
+27 03 2022 - 16:09:44.394 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+27 03 2022 - 16:09:44.406 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+27 03 2022 - 16:09:44.614 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8080/
+27 03 2022 - 16:09:44.614 [main] INFO  io.javalin.Javalin - Javalin started in 220ms \o/
+27 03 2022 - 16:10:23.702 [JettyServerThreadPool-25] INFO  com.revature.main.Driver - POST request received for /login
+27 03 2022 - 16:10:23.703 [JettyServerThreadPool-25] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+27 03 2022 - 16:10:23.828 [JettyServerThreadPool-25] INFO  com.revature.service.UserService - User service login attempted with username: jane2
+27 03 2022 - 16:10:24.103 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Create a jwt for username:jane2
+27 03 2022 - 16:10:24.127 [JettyServerThreadPool-25] INFO  com.revature.service.JWTService - Jws created for username:jane2
+27 03 2022 - 16:10:37.210 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+27 03 2022 - 16:10:37.211 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+27 03 2022 - 16:10:37.211 [JettyServerThreadPool-15] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 16:10:37.229 [JettyServerThreadPool-15] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+27 03 2022 - 16:10:37.260 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+27 03 2022 - 16:11:03.454 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - POST request received for /employees/2/reimbursements
+27 03 2022 - 16:11:03.454 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to add a reimbursement for employee: 2
+27 03 2022 - 16:11:03.454 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 16:12:04.565 [JettyServerThreadPool-17] INFO  com.revature.main.Driver - GET request received for /employees/2/reimbursements
+27 03 2022 - 16:12:04.565 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements for employee: 2
+27 03 2022 - 16:12:04.566 [JettyServerThreadPool-17] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+27 03 2022 - 16:12:04.567 [JettyServerThreadPool-17] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+27 03 2022 - 16:12:04.595 [JettyServerThreadPool-17] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully

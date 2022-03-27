@@ -17,11 +17,18 @@ public class ExceptionController implements Controller{
         ctx.json(e.getMessage());
     };
 
+    private ExceptionHandler employeeIdInvalid = (e, ctx) ->{
+        logger.warn("The employee attempted to be retrieve was a invalid input. Exception message: " + e.getMessage());
+        ctx.status(400);
+        ctx.json(e.getMessage());
+    };
+
 
 
     @Override
     public void mapEndPoints(Javalin app) {
 
         app.exception(FailedLoginException.class, loginFail);
+        app.exception(IllegalArgumentException.class, employeeIdInvalid);
     }
 }
