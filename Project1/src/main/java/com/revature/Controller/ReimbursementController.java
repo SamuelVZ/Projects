@@ -10,6 +10,7 @@ import io.javalin.http.UnauthorizedResponse;
 import io.javalin.http.UploadedFile;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
+import org.apache.tika.Tika;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -46,6 +47,8 @@ public class ReimbursementController implements Controller{
         List<ResponseReimbursementDto> responseReimbursementDtoList = this.reimbursementService.getAllReimbursements();
 
         logger.info("All reimbursements retrieve successfully");
+
+
         ctx.json(responseReimbursementDtoList);
     };
 
@@ -132,14 +135,62 @@ public class ReimbursementController implements Controller{
     };
 
 
+    private Handler getImageByReimbursementId = (ctx) -> {
+
+        String userId = ctx.pathParam("employeeId");
+        String reimbursementId = ctx.pathParam("reimbursementId");
+
+        logger.info("Trying to get an image for a reimbursement for employee: " + userId + " reimbursement id: " + reimbursementId);
+
+        InputStream image = this.reimbursementService.getReimbursementImage(reimbursementId, userId);
+
+        Tika tika = new Tika();
+        String mimeType = tika.detect(image);
+
+        ctx.header("Content-Type", mimeType); // tell the client what type of image is being sent in the response
+        ctx.result(image);
+    };
+
+    private Handler updateStatus = ctx -> {
+
+      String reimId = ctx.pathParam("reimbursementId");
+
+        logger.info("Trying to update the status for the reimbursement " + reimId);
+
+        String jwt = ctx.header("Authorization").split(" ")[1];
+
+        Jws<Claims> token = jwtService.parseJwt(jwt);
+
+
+        if(!token.getBody().get("user_role").equals("manager")){
+            logger.warn("A non manager user tried to update a reimbursement. user: " + token.getBody().getSubject());
+
+            throw new UnauthorizedResponse("you must be a manager to access this information");
+        }
+
+
+        String status = ctx.queryParam("statusId");
+
+        int userId = token.getBody().get("user_id", Integer.class);
+
+        if(status == null){
+            throw new IllegalArgumentException("You need to provide a status query parameter when attempting to update the reimbursement");
+        }
+
+        ResponseReimbursementDto responseReimbursementDto = reimbursementService.updateStatus(status, userId, reimId);
+
+
+        ctx.json(responseReimbursementDto);
+    };
+
     @Override
     public void mapEndPoints(Javalin app) {
 
         app.get("/reimbursements", getAllReimbursements);
         app.get("/employees/{employeeId}/reimbursements", getAllReimbursementByEmployeeId);
         app.post("employees/{employeeId}/reimbursements", addReimbursementToAnEmployee);
-
-
+        app.get("employees/{employeeId}/reimbursements/{reimbursementId}/image", getImageByReimbursementId);
+        app.patch("/reimbursements/{reimbursementId}", updateStatus);
 
     }
 }

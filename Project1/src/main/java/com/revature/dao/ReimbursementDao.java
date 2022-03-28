@@ -8,6 +8,7 @@ import com.revature.utility.ConnectionUtility;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -207,6 +208,7 @@ public class ReimbursementDao {
                 String dateResolved = rs.getString("date_resolved");
                 String description = rs.getString("description");
 
+
                 //employee User object
                 int employeeID = rs.getInt("employee_id");
                 String employeeUsername = rs.getString("employee_username");
@@ -312,6 +314,33 @@ public class ReimbursementDao {
 
     }
 
+    public InputStream getReimbursementImage (int userId, int reimbursementId) throws SQLException {
 
+        try (Connection con = ConnectionUtility.getConnection()) {
+
+
+            String sql = "SELECT RECEPIT_IMAGE " +
+                    "FROM REIMBURSEMENT " +
+                    "WHERE id = ? " +
+                    "AND EMPLOYEE_ID = ?";
+
+            PreparedStatement pstmt = con.prepareStatement(sql);
+
+            pstmt.setInt(1, reimbursementId);
+            pstmt.setInt(2, userId);
+
+            ResultSet rs = pstmt.executeQuery();
+
+            if (rs.next()) {
+
+                InputStream is = rs.getBinaryStream("RECEPIT_IMAGE");
+
+                return is;
+            } else {
+                return null;
+            }
+
+        }
+    }
 
 }

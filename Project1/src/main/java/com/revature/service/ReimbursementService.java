@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import com.revature.Controller.ReimbursementController;
+import com.revature.Exceptions.ImageNotFoundException;
 import com.revature.Exceptions.InvalidImageException;
 import com.revature.dao.ReimbursementDao;
 import com.revature.dto.AddReimbursementDto;
@@ -12,6 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
+import java.io.InputStream;
 import java.security.spec.InvalidParameterSpecException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -93,5 +95,49 @@ public class ReimbursementService {
 
 
         return  dto;
+    }
+
+    public InputStream getReimbursementImage(String reimbursementId, String userId) throws SQLException, ImageNotFoundException {
+
+            try{
+                int iReimbursementId = Integer.parseInt(reimbursementId);
+                int iUserId = Integer.parseInt(userId);
+
+                InputStream is = reimbursementDao.getReimbursementImage(iUserId, iReimbursementId);
+
+                if(is == null){
+                    throw new ImageNotFoundException("Reimbursement id " + reimbursementId + " does not have an image");
+                }
+
+                return is;
+
+            }catch (NumberFormatException e){
+                logger.warn("the user id: " + userId + " or reimbursement id: " + reimbursementId + " is invalid");
+                throw new IllegalArgumentException("the user id: " + userId + " or reimbursement id: " + reimbursementId + " are invalid");
+            }
+
+    }
+
+    public ResponseReimbursementDto updateStatus(String status, int userId, String reimId) throws SQLException {
+
+        try{
+            int iReimbursementId = Integer.parseInt(reimId);
+            int iStatus = Integer.parseInt(status);
+
+            Reimbursement reimbursement = reimbursementDao.updateReimbursements(iStatus, userId, iReimbursementId);
+
+            ResponseReimbursementDto dto = new ResponseReimbursementDto(reimbursement.getId(),reimbursement.getAmount(),
+                    reimbursement.getDateSubmitted(), reimbursement.getDateResolved(), reimbursement.getDescription(),
+                    reimbursement.getEmployee().getUsername(), reimbursement.getManager().getUsername(), reimbursement.getStatusName(), reimbursement.getTypeName());
+
+
+
+            return  dto;
+
+
+        }catch (NumberFormatException e){
+            logger.warn("the status id: " + status + " or reimbursement id: " + reimId + " is invalid");
+            throw new IllegalArgumentException("the status id: " + status + " or reimbursement id: " + reimId + " are invalid");
+        }
     }
 }

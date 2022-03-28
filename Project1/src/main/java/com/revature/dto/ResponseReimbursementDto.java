@@ -2,6 +2,7 @@ package com.revature.dto;
 
 import com.revature.model.User;
 
+import java.io.InputStream;
 import java.util.Objects;
 
 public class ResponseReimbursementDto {

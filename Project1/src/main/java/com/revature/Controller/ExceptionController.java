@@ -1,5 +1,6 @@
 package com.revature.Controller;
 
+import com.revature.Exceptions.ImageNotFoundException;
 import com.revature.Exceptions.InvalidImageException;
 import io.javalin.Javalin;
 import io.javalin.http.ExceptionHandler;
@@ -29,6 +30,12 @@ public class ExceptionController implements Controller{
         ctx.json(e.getMessage());
     };
 
+    private ExceptionHandler notFoundImage = (e, ctx) ->{
+        logger.warn("The image attempted to be retrieve doesn't exist. Exception message: " + e.getMessage());
+        ctx.status(400);
+        ctx.json(e.getMessage());
+    };
+
 
     @Override
     public void mapEndPoints(Javalin app) {
@@ -36,5 +43,7 @@ public class ExceptionController implements Controller{
         app.exception(FailedLoginException.class, loginFail);
         app.exception(IllegalArgumentException.class, employeeIdInvalid);
         app.exception(InvalidImageException.class, invalidImage);
+        app.exception(ImageNotFoundException.class, notFoundImage);
+
     }
 }

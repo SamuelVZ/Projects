@@ -1,5 +1,6 @@
 package com.revature.model;
 
+import java.io.InputStream;
 import java.util.Objects;
 
 public class Reimbursement {
@@ -9,6 +10,7 @@ public class Reimbursement {
     private String dateSubmitted;
     private String dateResolved;
     private String description;
+
 
     private User employee;
     private User manager;
