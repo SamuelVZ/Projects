@@ -104,15 +104,16 @@ public class ReimbursementDao {
 
             con.setAutoCommit(false);
 
-            String sql = "INSERT INTO reimbursement (amount, description, employee_id, type_id) " +
-                    "VALUES (?, ?, ?, ?)";
+            String sql = "INSERT INTO reimbursement (amount, description, recepit_image, employee_id, type_id) " +
+                    "VALUES (?, ?, ?, ?, ?)";
 
             PreparedStatement pstmt1 = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS);
 
             pstmt1.setInt(1, dto.getAmount());
             pstmt1.setString(2, dto.getDescription());
-            pstmt1.setInt(3, employeeId);
-            pstmt1.setInt(4, dto.getTypeId());
+            pstmt1.setBinaryStream(3, dto.getImage());
+            pstmt1.setInt(4, employeeId);
+            pstmt1.setInt(5, dto.getTypeId());
 
             pstmt1.executeUpdate();
 

@@ -1,14 +1,17 @@
 package com.revature.service;
 
 import com.revature.Controller.ReimbursementController;
+import com.revature.Exceptions.InvalidImageException;
 import com.revature.dao.ReimbursementDao;
 import com.revature.dto.AddReimbursementDto;
 import com.revature.dto.ResponseReimbursementDto;
 import com.revature.model.Reimbursement;
 import com.revature.utility.ConnectionUtility;
+import org.apache.tika.Tika;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.IOException;
 import java.security.spec.InvalidParameterSpecException;
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -71,7 +74,14 @@ public class ReimbursementService {
 
     }
 
-    public ResponseReimbursementDto addReimbursementByUserId(int empID, AddReimbursementDto addDto) throws SQLException {
+    public ResponseReimbursementDto addReimbursementByUserId(int empID, AddReimbursementDto addDto) throws SQLException, IOException, InvalidImageException {
+
+        Tika tika = new Tika();
+        String mimeType = tika.detect(addDto.getImage());
+
+        if (!mimeType.equals("image/jpeg") && !mimeType.equals("image/png") && !mimeType.equals("image/gif")) {
+            throw new InvalidImageException("Image must be a JPEG, PNG, or GIF");
+        }
 
 
         Reimbursement reimbursement = reimbursementDao.addReimbursement(empID, addDto);

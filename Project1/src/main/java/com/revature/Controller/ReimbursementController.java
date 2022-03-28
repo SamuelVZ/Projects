@@ -7,11 +7,13 @@ import com.revature.service.ReimbursementService;
 import io.javalin.Javalin;
 import io.javalin.http.Handler;
 import io.javalin.http.UnauthorizedResponse;
+import io.javalin.http.UploadedFile;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jws;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.InputStream;
 import java.util.List;
 
 public class ReimbursementController implements Controller{
@@ -102,8 +104,27 @@ public class ReimbursementController implements Controller{
 
             throw new UnauthorizedResponse("you can only add reimbursements to yourself!!");
         }
+        //to populate the dto with the info(text)
+        String amount = ctx.formParam("amount");
+        String description = ctx.formParam("description");
+        String typeId = ctx.formParam("typeId");
 
-        AddReimbursementDto addDto = ctx.bodyAsClass(AddReimbursementDto.class);
+        int iAmount = Integer.parseInt(amount);
+        int iTypeId = Integer.parseInt(typeId);
+
+        AddReimbursementDto addDto = new AddReimbursementDto();
+        addDto.setAmount(iAmount);
+        addDto.setDescription(description);
+        addDto.setTypeId(iTypeId);
+
+
+        //to populate the image
+        UploadedFile image = ctx.uploadedFile("image");
+        InputStream is = image.getContent();
+        addDto.setImage(is);
+
+
+
         ResponseReimbursementDto response = reimbursementService.addReimbursementByUserId(empID, addDto);
 
         ctx.json(response);
@@ -117,6 +138,7 @@ public class ReimbursementController implements Controller{
         app.get("/reimbursements", getAllReimbursements);
         app.get("/employees/{employeeId}/reimbursements", getAllReimbursementByEmployeeId);
         app.post("employees/{employeeId}/reimbursements", addReimbursementToAnEmployee);
+
 
 
     }
