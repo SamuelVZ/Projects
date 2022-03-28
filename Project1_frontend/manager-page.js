@@ -23,6 +23,8 @@ async function populateReimbursementTable(){
 
     if(res.status === 200){
         let reimbursemnts = await res.json();
+        document.querySelector('#reimbursements-tbl > tbody').innerHTML = '';
+    
 
         let tbody = document.querySelector('#reimbursements-tbl > tbody');
 
@@ -91,6 +93,45 @@ async function populateReimbursementTable(){
             tr.appendChild(td8);
             tr.appendChild(td9);
             tr.appendChild(td10);
+
+            //cheking if the reimbursement
+            if(!reimbursemnt.managerUsername){
+                let statusInput = document.createElement('input');
+                statusInput.setAttribute('type', 'number');
+                statusInput.setAttribute('min', 1);
+                statusInput.setAttribute('max', 4);
+
+                let updateStatusBtn = document.createElement("button");
+                updateStatusBtn.innerText = 'Update Status';
+
+                updateStatusBtn.addEventListener('click', async () => {
+                    let status = statusInput.value;
+
+                    try{
+                        let res = await fetch(`http://localhost:8081/reimbursements/${reimbursemnt.id}?statusId=${status}`, {
+                            method: 'PATCH',
+                            headers: {
+                                Authorization: `Bearer ${localStorage.getItem('jwt')}`
+                            }
+                        });
+
+
+                        
+                        populateReimbursementTable(); //to refresh the table once it update it
+                        
+
+                    }catch (e) {
+                        console.log(e);
+                    }
+
+                });
+
+                tr.appendChild(statusInput);
+                tr.appendChild(updateStatusBtn);
+
+            }
+
+
             
             tbody.appendChild(tr);
         }
