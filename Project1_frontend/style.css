@@ -1,7 +1,10 @@
 @import "https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css";
 
 #login {
+    width: 20%;
+    margin: auto;
     text-align: center;
+    
 }
 
 .form-input{

@@ -1,4 +1,8 @@
 window.addEventListener('load', (event) => {
+
+    let h1 = document.getElementById('h1emp');
+    h1.innerText = `Welcome to the employee page: ${localStorage.getItem('username')}`;
+
     populateReimbursementTable();
 });
 
@@ -76,35 +80,45 @@ async function populateReimbursementTable(){
 
             let td1 = document.createElement('td');
             td1.innerText = reimbursemnt.id;
+            td1.className = 'has-text-centered is-vcentered';
 
             let td2 = document.createElement('td');
             td2.innerText = reimbursemnt.amount;
+            td2.className = 'has-text-centered is-vcentered';
 
             let td3 = document.createElement('td');
             td3.innerText = reimbursemnt.dateSubmitted;
+            td3.className = 'has-text-centered is-vcentered';
 
             let td4 = document.createElement('td');
             td4.innerText = (reimbursemnt.managerUsername ? reimbursemnt.dateResolved : 'Not resolved'); 
             td4.style.color = (reimbursemnt.managerUsername ? td4.style.color : 'red');
+            td4.className = 'has-text-centered is-vcentered';
 
             let td5 = document.createElement('td');
             td5.innerText = reimbursemnt.description;
+            td5.className = 'has-text-centered is-vcentered';
 
             let td6 = document.createElement('td');
             td6.innerText = reimbursemnt.employeeUsername;
+            td6.className = 'has-text-centered is-vcentered';
             
             let td7 = document.createElement('td');
             td7.innerText = (reimbursemnt.managerUsername ? reimbursemnt.managerUsername : 'Not assigned')
             td7.style.color = (reimbursemnt.managerUsername ? td7.style.color : 'red');
+            td7.className = 'has-text-centered is-vcentered';
 
             let td8 = document.createElement('td');
             td8.innerText = reimbursemnt.statusName;
+            td8.className = 'has-text-centered is-vcentered';
 
             let td9 = document.createElement('td');
             td9.innerText = reimbursemnt.typeName;
+            td9.className = 'has-text-centered is-vcentered';
 
 
             let td10 = document.createElement('td');
+            td10.className = 'has-text-centered is-vcentered';
 
             let res2 = await fetch(`http://localhost:8081/reimbursements/${reimbursemnt.id}/image`, {
                 method: 'GET'

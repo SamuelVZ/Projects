@@ -30,6 +30,7 @@ loginBtn.addEventListener('click', async () => {
         localStorage.setItem('jwt', token);
         localStorage.setItem('user_id', user.id); 
         localStorage.setItem('user_role', user.role);
+        localStorage.setItem('username', user.username);
 
         if (user.role === 'manager') {
             window.location = '/manager-page.html';
