@@ -41,7 +41,7 @@ rembursementSubmitBtn.addEventListener('click', async () => {
 
     try{
         console.log(localStorage.getItem('user_id'));
-        let res = await fetch(`http://localhost:8081/employees/${localStorage.getItem('user_id')}/reimbursements`, {
+        let res = await fetch(`http://34.83.66.148:1000/employees/${localStorage.getItem('user_id')}/reimbursements`, {
             method: 'POST',
             body: formData,
             headers : {
@@ -61,7 +61,7 @@ rembursementSubmitBtn.addEventListener('click', async () => {
 
 
 async function populateReimbursementTable(){
-    const URL = `http://localhost:8081/employees/${localStorage.getItem('user_id')}/reimbursements`;
+    const URL = `http://34.83.66.148:1000/employees/${localStorage.getItem('user_id')}/reimbursements`;
 
     let res = await fetch(URL, {
         method: 'GET',
@@ -120,12 +120,12 @@ async function populateReimbursementTable(){
             let td10 = document.createElement('td');
             td10.className = 'has-text-centered is-vcentered';
 
-            let res2 = await fetch(`http://localhost:8081/reimbursements/${reimbursemnt.id}/image`, {
+            let res2 = await fetch(`http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`, {
                 method: 'GET'
             })
             if(res2.status === 200){
                 let imgElement = document.createElement('img');
-                imgElement.setAttribute('src', `http://localhost:8081/reimbursements/${reimbursemnt.id}/image`);
+                imgElement.setAttribute('src', `http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`);
                 imgElement.style.height = '200px';
                 td10.appendChild(imgElement);
             }else {

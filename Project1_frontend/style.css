@@ -7,6 +7,12 @@
     
 }
 
+#reimbursementTableDiv{
+    
+    margin: auto;
+    text-align: center;
+}
+
 .form-input{
     margin: 20px;
 }
