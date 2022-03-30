@@ -12,20 +12,105 @@ let logout = document.querySelector('#logout-btn');
 logout.addEventListener('click', () => {
 
     localStorage.removeItem('jwt');
-    localStorage.removeItem('user_id'); 
+    localStorage.removeItem('user_id');
     localStorage.removeItem('user_role');
 
 
     window.location = '/index.html';
 });
 
+let clearBtn = document.querySelector('#clear-btn');
 
+clearBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = ""
+    table = document.querySelector("#reimbursements-tbl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+let pendingBtn = document.querySelector('#pending-btn');
+
+pendingBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "pending"
+    table = document.querySelector("#reimbursements-tbl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+
+let approvedBtn = document.querySelector('#approved-btn');
+
+approvedBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "approved"
+    table = document.querySelector("#reimbursements-tbl");
+    console.log(filter);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+let deniedBtn = document.querySelector('#denied-btn');
+
+deniedBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "denied"
+    table = document.querySelector("#reimbursements-tbl");
+    console.log(filter);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
 
 
 
 let rembursementSubmitBtn = document.querySelector('#submit-btn');
 
-rembursementSubmitBtn.addEventListener('click', async () => {
+rembursementSubmitBtn.addEventListener('click', async() => {
     let reimbursementNameInput = document.querySelector('#amount-input');
     let reimbursementDescriptionInput = document.querySelector('#description-input');
     let reimbursementTypeInput = document.querySelector('#type-input');
@@ -39,12 +124,12 @@ rembursementSubmitBtn.addEventListener('click', async () => {
     formData.append('image', reimbursementImageInput.files[0]);
 
 
-    try{
+    try {
         console.log(localStorage.getItem('user_id'));
         let res = await fetch(`http://34.83.66.148:1000/employees/${localStorage.getItem('user_id')}/reimbursements`, {
             method: 'POST',
             body: formData,
-            headers : {
+            headers: {
                 'Authorization': `Bearer ${localStorage.getItem('jwt')}`
             }
         });
@@ -52,7 +137,7 @@ rembursementSubmitBtn.addEventListener('click', async () => {
 
         populateReimbursementTable();
 
-    }catch (e){
+    } catch (e) {
         console.log(e);
     }
 
@@ -60,7 +145,7 @@ rembursementSubmitBtn.addEventListener('click', async () => {
 
 
 
-async function populateReimbursementTable(){
+async function populateReimbursementTable() {
     const URL = `http://34.83.66.148:1000/employees/${localStorage.getItem('user_id')}/reimbursements`;
 
     let res = await fetch(URL, {
@@ -70,12 +155,12 @@ async function populateReimbursementTable(){
         }
     })
 
-    if(res.status === 200){
+    if (res.status === 200) {
         let reimbursemnts = await res.json();
 
         document.querySelector('#reimbursements-tbl > tbody').innerHTML = '';
 
-        for (let reimbursemnt of reimbursemnts){
+        for (let reimbursemnt of reimbursemnts) {
             let tr = document.createElement('tr');
 
             let td1 = document.createElement('td');
@@ -91,7 +176,7 @@ async function populateReimbursementTable(){
             td3.className = 'has-text-centered is-vcentered';
 
             let td4 = document.createElement('td');
-            td4.innerText = (reimbursemnt.managerUsername ? reimbursemnt.dateResolved : 'Not resolved'); 
+            td4.innerText = (reimbursemnt.managerUsername ? reimbursemnt.dateResolved : 'Not resolved');
             td4.style.color = (reimbursemnt.managerUsername ? td4.style.color : 'red');
             td4.className = 'has-text-centered is-vcentered';
 
@@ -102,7 +187,7 @@ async function populateReimbursementTable(){
             let td6 = document.createElement('td');
             td6.innerText = reimbursemnt.employeeUsername;
             td6.className = 'has-text-centered is-vcentered';
-            
+
             let td7 = document.createElement('td');
             td7.innerText = (reimbursemnt.managerUsername ? reimbursemnt.managerUsername : 'Not assigned')
             td7.style.color = (reimbursemnt.managerUsername ? td7.style.color : 'red');
@@ -123,14 +208,14 @@ async function populateReimbursementTable(){
             let res2 = await fetch(`http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`, {
                 method: 'GET'
             })
-            if(res2.status === 200){
+            if (res2.status === 200) {
                 let imgElement = document.createElement('img');
                 imgElement.setAttribute('src', `http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`);
                 imgElement.style.height = '200px';
                 td10.appendChild(imgElement);
-            }else {
-               
-                let errormsg1 =  await res2.text(); // to get the error message from the backend
+            } else {
+
+                let errormsg1 = await res2.text(); // to get the error message from the backend
                 td10.innerText = errormsg1;
                 td10.style.color = 'red';
             }
@@ -154,8 +239,8 @@ async function populateReimbursementTable(){
             tbody.appendChild(tr);
         }
     }
-        
-      
-   
+
+
+
 
 }

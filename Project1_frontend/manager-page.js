@@ -1,3 +1,11 @@
+window.addEventListener('load', (event) => {
+
+    let h1 = document.getElementById('h1emp');
+    h1.innerText = `Welcome to the manager page: ${localStorage.getItem('username')}`;
+    populateReimbursementTable();
+});
+
+
 let logout = document.querySelector('#logout-btn');
 
 logout.addEventListener('click', () => {
@@ -7,14 +15,96 @@ logout.addEventListener('click', () => {
 });
 
 
-window.addEventListener('load', (event) => {
 
-    let h1 = document.getElementById('h1emp');
-    h1.innerText = `Welcome to the manager page: ${localStorage.getItem('username')}`;
-    populateReimbursementTable();
+let clearBtn = document.querySelector('#clear-btn');
+
+clearBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = ""
+    table = document.querySelector("#reimbursements-tbl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
 });
 
-async function populateReimbursementTable(){
+let pendingBtn = document.querySelector('#pending-btn');
+
+pendingBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "pending"
+    table = document.querySelector("#reimbursements-tbl");
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+
+let approvedBtn = document.querySelector('#approved-btn');
+
+approvedBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "approved"
+    table = document.querySelector("#reimbursements-tbl");
+    console.log(filter);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+let deniedBtn = document.querySelector('#denied-btn');
+
+deniedBtn.addEventListener('click', () => {
+
+    var filter, table, tr, td, i, txtValue;
+    filter = "denied"
+    table = document.querySelector("#reimbursements-tbl");
+    console.log(filter);
+    tr = table.getElementsByTagName("tr");
+    for (i = 0; i < tr.length; i++) {
+        td = tr[i].getElementsByTagName("td")[7];
+        if (td) {
+            txtValue = td.innerText;
+            if (txtValue.indexOf(filter) > -1) {
+                tr[i].style.display = "";
+            } else {
+                tr[i].style.display = "none";
+            }
+        }
+    }
+});
+
+
+async function populateReimbursementTable() {
     const URL = 'http://34.83.66.148:1000/reimbursements';
 
     let res = await fetch(URL, {
@@ -24,14 +114,14 @@ async function populateReimbursementTable(){
         }
     })
 
-    if(res.status === 200){
+    if (res.status === 200) {
         let reimbursemnts = await res.json();
         document.querySelector('#reimbursements-tbl > tbody').innerHTML = '';
-    
+
 
         let tbody = document.querySelector('#reimbursements-tbl > tbody');
 
-        for (let reimbursemnt of reimbursemnts){
+        for (let reimbursemnt of reimbursemnts) {
             let tr = document.createElement('tr');
 
             let td1 = document.createElement('td');
@@ -47,7 +137,7 @@ async function populateReimbursementTable(){
             td3.className = 'has-text-centered is-vcentered';
 
             let td4 = document.createElement('td');
-            td4.innerText = (reimbursemnt.managerUsername ? reimbursemnt.dateResolved : 'Not reviewed'); 
+            td4.innerText = (reimbursemnt.managerUsername ? reimbursemnt.dateResolved : 'Not reviewed');
             td4.style.color = (reimbursemnt.managerUsername ? td4.style.color : 'red');
             td4.className = 'has-text-centered is-vcentered';
 
@@ -58,7 +148,7 @@ async function populateReimbursementTable(){
             let td6 = document.createElement('td');
             td6.innerText = reimbursemnt.employeeUsername;
             td6.className = 'has-text-centered is-vcentered';
-            
+
             let td7 = document.createElement('td');
             td7.innerText = (reimbursemnt.managerUsername ? reimbursemnt.managerUsername : 'Not assigned')
             td7.style.color = (reimbursemnt.managerUsername ? td7.style.color : 'red');
@@ -74,26 +164,26 @@ async function populateReimbursementTable(){
 
             let td10 = document.createElement('td');
             td10.className = 'has-text-centered is-vcentered';
-            
+
 
             let res2 = await fetch(`http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`, {
                 method: 'GET'
             })
-            if(res2.status === 200){
+            if (res2.status === 200) {
                 let imgElement = document.createElement('img');
                 imgElement.setAttribute('src', `http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}/image`);
                 imgElement.style.height = '200px';
                 td10.appendChild(imgElement);
-            }else {
+            } else {
                 //td10.innerText = 'not image';
-                let errormsg1 =  await res2.text(); // to get the error message from the backend
+                let errormsg1 = await res2.text(); // to get the error message from the backend
                 td10.innerText = errormsg1;
                 td10.style.color = 'red';
             }
 
             //imgElement.style.height = '200px';
             //td10.appendChild(imgElement);
-           
+
 
             tr.appendChild(td1);
             tr.appendChild(td2);
@@ -107,21 +197,22 @@ async function populateReimbursementTable(){
             tr.appendChild(td10);
 
             //cheking if the reimbursement
-            if(!reimbursemnt.managerUsername){
+            if (!reimbursemnt.managerUsername) {
                 let statusInput = document.createElement('input');
-                statusInput.className = 'has-text-centered is-vcentered';
                 statusInput.setAttribute('type', 'number');
                 statusInput.setAttribute('min', 1);
                 statusInput.setAttribute('max', 4);
+                statusInput.className = 'input';
 
                 let updateStatusBtn = document.createElement("button");
+                updateStatusBtn.className = 'button is-link'
                 updateStatusBtn.innerText = 'Update Status';
-                updateStatusBtn.className = 'has-text-centered is-vcentered';
+                //updateStatusBtn.className = 'has-text-centered is-vcentered';
 
-                updateStatusBtn.addEventListener('click', async () => {
+                updateStatusBtn.addEventListener('click', async() => {
                     let status = statusInput.value;
 
-                    try{
+                    try {
                         let res = await fetch(`http://34.83.66.148:1000/reimbursements/${reimbursemnt.id}?statusId=${status}`, {
                             method: 'PATCH',
                             headers: {
@@ -130,11 +221,11 @@ async function populateReimbursementTable(){
                         });
 
 
-                        
-                        populateReimbursementTable(); //to refresh the table once it update it
-                        
 
-                    }catch (e) {
+                        populateReimbursementTable(); //to refresh the table once it update it
+
+
+                    } catch (e) {
                         console.log(e);
                     }
 
@@ -146,13 +237,12 @@ async function populateReimbursementTable(){
             }
 
 
-            
+
             tbody.appendChild(tr);
         }
     }
-        
-      
-   
+
+
+
 
 }
-
