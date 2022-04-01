@@ -1,8 +1,5 @@
 package com.revature.dto;
 
-import com.revature.model.User;
-
-import java.io.InputStream;
 import java.util.Objects;
 
 public class ResponseReimbursementDto {
@@ -14,7 +11,7 @@ public class ResponseReimbursementDto {
     private String description;
 
     private String employeeUsername;
-    private String manager_username;
+    private String managerUsername;
 
     private String statusName;
     private String typeName;
@@ -29,7 +26,7 @@ public class ResponseReimbursementDto {
         this.dateResolved = dateResolved;
         this.description = description;
         this.employeeUsername = employeeUsername;
-        this.manager_username = manager_username;
+        this.managerUsername = manager_username;
         this.statusName = statusName;
         this.typeName = typeName;
     }
@@ -43,7 +40,7 @@ public class ResponseReimbursementDto {
                 ", dateResolved='" + dateResolved + '\'' +
                 ", description='" + description + '\'' +
                 ", employeeUsername='" + employeeUsername + '\'' +
-                ", manager_username='" + manager_username + '\'' +
+                ", manager_username='" + managerUsername + '\'' +
                 ", statusName='" + statusName + '\'' +
                 ", typeName='" + typeName + '\'' +
                 '}';
@@ -54,12 +51,12 @@ public class ResponseReimbursementDto {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         ResponseReimbursementDto that = (ResponseReimbursementDto) o;
-        return id == that.id && amount == that.amount && Objects.equals(dateSubmitted, that.dateSubmitted) && Objects.equals(dateResolved, that.dateResolved) && Objects.equals(description, that.description) && Objects.equals(employeeUsername, that.employeeUsername) && Objects.equals(manager_username, that.manager_username) && Objects.equals(statusName, that.statusName) && Objects.equals(typeName, that.typeName);
+        return id == that.id && amount == that.amount && Objects.equals(dateSubmitted, that.dateSubmitted) && Objects.equals(dateResolved, that.dateResolved) && Objects.equals(description, that.description) && Objects.equals(employeeUsername, that.employeeUsername) && Objects.equals(managerUsername, that.managerUsername) && Objects.equals(statusName, that.statusName) && Objects.equals(typeName, that.typeName);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, amount, dateSubmitted, dateResolved, description, employeeUsername, manager_username, statusName, typeName);
+        return Objects.hash(id, amount, dateSubmitted, dateResolved, description, employeeUsername, managerUsername, statusName, typeName);
     }
 
     public int getId() {
@@ -110,12 +107,12 @@ public class ResponseReimbursementDto {
         this.employeeUsername = employeeUsername;
     }
 
-    public String getManager_username() {
-        return manager_username;
+    public String getManagerUsername() {
+        return managerUsername;
     }
 
-    public void setManager_username(String manager_username) {
-        this.manager_username = manager_username;
+    public void setManagerUsername(String managerUsername) {
+        this.managerUsername = managerUsername;
     }
 
     public String getStatusName() {

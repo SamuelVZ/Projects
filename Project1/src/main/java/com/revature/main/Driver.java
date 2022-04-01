@@ -22,7 +22,10 @@ public class Driver {
 
 
 
-        Javalin app = Javalin.create();
+        Javalin app = Javalin.create((config) -> {  //TODO to set the localhost 8080 (frontend) to be a trusted origin
+            config.enableCorsForAllOrigins();
+
+        });
 
         app.before((ctx) -> {
             logger.info(ctx.method() + " request received for " + ctx.path());
@@ -31,7 +34,7 @@ public class Driver {
         mapControllers(app, new AuthenticationController(), new ExceptionController(), new ReimbursementController());
 
 
-        app.start(8080);
+        app.start(8081);
 
 
 

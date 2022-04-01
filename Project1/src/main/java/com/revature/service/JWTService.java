@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import com.revature.Controller.ExceptionController;
+import com.revature.dao.UserDao;
 import com.revature.model.User;
 import io.javalin.http.UnauthorizedResponse;
 import io.jsonwebtoken.*;

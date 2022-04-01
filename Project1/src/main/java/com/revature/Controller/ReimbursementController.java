@@ -37,6 +37,7 @@ public class ReimbursementController implements Controller{
 
         Jws<Claims> token = jwtService.parseJwt(jwt);
 
+
         if(!token.getBody().get("user_role").equals("manager")){
             logger.warn("A non manager user tried to retrieve all reimbursements. user: " + token.getBody().getSubject());
 
@@ -137,12 +138,12 @@ public class ReimbursementController implements Controller{
 
     private Handler getImageByReimbursementId = (ctx) -> {
 
-        String userId = ctx.pathParam("employeeId");
+
         String reimbursementId = ctx.pathParam("reimbursementId");
 
-        logger.info("Trying to get an image for a reimbursement for employee: " + userId + " reimbursement id: " + reimbursementId);
+        logger.info("Trying to get an image for the reimbursement id: " + reimbursementId);
 
-        InputStream image = this.reimbursementService.getReimbursementImage(reimbursementId, userId);
+        InputStream image = this.reimbursementService.getReimbursementImage(reimbursementId);
 
         Tika tika = new Tika();
         String mimeType = tika.detect(image);
@@ -189,7 +190,7 @@ public class ReimbursementController implements Controller{
         app.get("/reimbursements", getAllReimbursements);
         app.get("/employees/{employeeId}/reimbursements", getAllReimbursementByEmployeeId);
         app.post("employees/{employeeId}/reimbursements", addReimbursementToAnEmployee);
-        app.get("employees/{employeeId}/reimbursements/{reimbursementId}/image", getImageByReimbursementId);
+        app.get("/reimbursements/{reimbursementId}/image", getImageByReimbursementId);
         app.patch("/reimbursements/{reimbursementId}", updateStatus);
 
     }

@@ -314,20 +314,19 @@ public class ReimbursementDao {
 
     }
 
-    public InputStream getReimbursementImage (int userId, int reimbursementId) throws SQLException {
+    public InputStream getReimbursementImage (int reimbursementId) throws SQLException {
 
         try (Connection con = ConnectionUtility.getConnection()) {
 
 
             String sql = "SELECT RECEPIT_IMAGE " +
                     "FROM REIMBURSEMENT " +
-                    "WHERE id = ? " +
-                    "AND EMPLOYEE_ID = ?";
+                    "WHERE id = ? ";
 
             PreparedStatement pstmt = con.prepareStatement(sql);
 
             pstmt.setInt(1, reimbursementId);
-            pstmt.setInt(2, userId);
+
 
             ResultSet rs = pstmt.executeQuery();
 

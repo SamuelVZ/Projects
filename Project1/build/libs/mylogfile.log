@@ -1,0 +1,136 @@
+29 03 2022 - 10:47:30.965 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+29 03 2022 - 10:47:30.974 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @318ms to org.eclipse.jetty.util.log.Slf4jLog
+29 03 2022 - 10:47:30.975 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+29 03 2022 - 10:47:30.997 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+29 03 2022 - 10:47:31.211 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8081/
+29 03 2022 - 10:47:31.211 [main] INFO  io.javalin.Javalin - Javalin started in 237ms \o/
+29 03 2022 - 10:48:43.063 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - POST request received for /login
+29 03 2022 - 10:48:43.063 [JettyServerThreadPool-24] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+29 03 2022 - 10:48:43.152 [JettyServerThreadPool-24] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+29 03 2022 - 10:48:44.462 [JettyServerThreadPool-24] WARN  io.javalin.Javalin - Uncaught exception
+org.postgresql.util.PSQLException: FATAL: password authentication failed for user "postgres"
+	at org.postgresql.core.v3.ConnectionFactoryImpl.doAuthentication(ConnectionFactoryImpl.java:646)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.tryConnect(ConnectionFactoryImpl.java:180)
+	at org.postgresql.core.v3.ConnectionFactoryImpl.openConnectionImpl(ConnectionFactoryImpl.java:235)
+	at org.postgresql.core.ConnectionFactory.openConnection(ConnectionFactory.java:49)
+	at org.postgresql.jdbc.PgConnection.<init>(PgConnection.java:223)
+	at org.postgresql.Driver.makeConnection(Driver.java:400)
+	at org.postgresql.Driver.connect(Driver.java:259)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at com.revature.utility.ConnectionUtility.getConnection(ConnectionUtility.java:19)
+	at com.revature.dao.UserDao.getUserByUsernameAndPassword(UserDao.java:21)
+	at com.revature.service.UserService.login(UserService.java:29)
+	at com.revature.Controller.AuthenticationController.lambda$new$0(AuthenticationController.java:32)
+	at io.javalin.core.security.SecurityUtil.noopAccessManager(SecurityUtil.kt:20)
+	at io.javalin.http.JavalinServlet.addHandler$lambda-5(JavalinServlet.kt:115)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:44)
+	at io.javalin.http.JavalinServlet$service$tryBeforeAndEndpointHandlers$1.invoke(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service$tryWithExceptionMapper(JavalinServlet.kt:131)
+	at io.javalin.http.JavalinServlet.service$tryBeforeAndEndpointHandlers(JavalinServlet.kt:39)
+	at io.javalin.http.JavalinServlet.service(JavalinServlet.kt:87)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at io.javalin.jetty.JavalinJettyServlet.service(JavalinJettyServlet.kt:58)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:790)
+	at org.eclipse.jetty.servlet.ServletHolder.handle(ServletHolder.java:799)
+	at org.eclipse.jetty.servlet.ServletHandler.doHandle(ServletHandler.java:550)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at org.eclipse.jetty.server.session.SessionHandler.doHandle(SessionHandler.java:1624)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextHandle(ScopedHandler.java:233)
+	at io.javalin.jetty.JettyServer$start$wsAndHttpHandler$1.doHandle(JettyServer.kt:52)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:188)
+	at org.eclipse.jetty.servlet.ServletHandler.doScope(ServletHandler.java:501)
+	at org.eclipse.jetty.server.session.SessionHandler.doScope(SessionHandler.java:1594)
+	at org.eclipse.jetty.server.handler.ScopedHandler.nextScope(ScopedHandler.java:186)
+	at org.eclipse.jetty.server.handler.ContextHandler.doScope(ContextHandler.java:1349)
+	at org.eclipse.jetty.server.handler.ScopedHandler.handle(ScopedHandler.java:141)
+	at org.eclipse.jetty.server.handler.StatisticsHandler.handle(StatisticsHandler.java:179)
+	at org.eclipse.jetty.server.handler.HandlerWrapper.handle(HandlerWrapper.java:127)
+	at org.eclipse.jetty.server.Server.handle(Server.java:516)
+	at org.eclipse.jetty.server.HttpChannel.lambda$handle$1(HttpChannel.java:400)
+	at org.eclipse.jetty.server.HttpChannel.dispatch(HttpChannel.java:645)
+	at org.eclipse.jetty.server.HttpChannel.handle(HttpChannel.java:392)
+	at org.eclipse.jetty.server.HttpConnection.onFillable(HttpConnection.java:277)
+	at org.eclipse.jetty.io.AbstractConnection$ReadCallback.succeeded(AbstractConnection.java:311)
+	at org.eclipse.jetty.io.FillInterest.fillable(FillInterest.java:105)
+	at org.eclipse.jetty.io.ChannelEndPoint$1.run(ChannelEndPoint.java:104)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool.runJob(QueuedThreadPool.java:883)
+	at org.eclipse.jetty.util.thread.QueuedThreadPool$Runner.run(QueuedThreadPool.java:1034)
+	at java.lang.Thread.run(Unknown Source)
+29 03 2022 - 10:53:50.911 [main] INFO  io.javalin.Javalin - 
+       __                      __ _            __ __
+      / /____ _ _   __ ____ _ / /(_)____      / // /
+ __  / // __ `/| | / // __ `// // // __ \    / // /_
+/ /_/ // /_/ / | |/ // /_/ // // // / / /   /__  __/
+\____/ \__,_/  |___/ \__,_//_//_//_/ /_/      /_/
+
+          https://javalin.io/documentation
+
+29 03 2022 - 10:53:50.917 [main] INFO  org.eclipse.jetty.util.log - Logging initialized @222ms to org.eclipse.jetty.util.log.Slf4jLog
+29 03 2022 - 10:53:50.917 [main] INFO  io.javalin.Javalin - Starting Javalin ...
+29 03 2022 - 10:53:50.929 [main] INFO  io.javalin.Javalin - You are running Javalin 4.3.0 (released January 13, 2022).
+29 03 2022 - 10:53:51.114 [main] INFO  io.javalin.Javalin - Listening on http://localhost:8081/
+29 03 2022 - 10:53:51.114 [main] INFO  io.javalin.Javalin - Javalin started in 197ms \o/
+29 03 2022 - 10:54:14.293 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - POST request received for /login
+29 03 2022 - 10:54:14.293 [JettyServerThreadPool-24] INFO  c.r.C.AuthenticationController - logging jwt endpoint invoked
+29 03 2022 - 10:54:14.384 [JettyServerThreadPool-24] INFO  com.revature.service.UserService - User service login attempted with username: samuel1
+29 03 2022 - 10:54:14.641 [JettyServerThreadPool-24] INFO  com.revature.service.JWTService - Create a jwt for username:samuel1
+29 03 2022 - 10:54:14.659 [JettyServerThreadPool-24] INFO  com.revature.service.JWTService - Jws created for username:samuel1
+29 03 2022 - 10:54:14.718 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - OPTIONS request received for /reimbursements
+29 03 2022 - 10:54:14.720 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements
+29 03 2022 - 10:54:14.720 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+29 03 2022 - 10:54:14.720 [JettyServerThreadPool-19] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+29 03 2022 - 10:54:14.736 [JettyServerThreadPool-19] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+29 03 2022 - 10:54:14.765 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+29 03 2022 - 10:54:14.771 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /reimbursements/4/image
+29 03 2022 - 10:54:14.771 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 4
+29 03 2022 - 10:54:14.878 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements/5/image
+29 03 2022 - 10:54:14.878 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /reimbursements/4/image
+29 03 2022 - 10:54:14.878 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 5
+29 03 2022 - 10:54:14.878 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 4
+29 03 2022 - 10:54:14.923 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - GET request received for /reimbursements/5/image
+29 03 2022 - 10:54:14.923 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /reimbursements/1/image
+29 03 2022 - 10:54:14.923 [JettyServerThreadPool-13] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 5
+29 03 2022 - 10:54:14.923 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 1
+29 03 2022 - 10:54:14.952 [JettyServerThreadPool-24] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 1 does not have an image
+29 03 2022 - 10:54:14.956 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - GET request received for /reimbursements/3/image
+29 03 2022 - 10:54:14.956 [JettyServerThreadPool-26] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 3
+29 03 2022 - 10:54:14.982 [JettyServerThreadPool-26] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 3 does not have an image
+29 03 2022 - 10:54:14.986 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /reimbursements/2/image
+29 03 2022 - 10:54:14.986 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 2
+29 03 2022 - 10:54:15.012 [JettyServerThreadPool-24] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 2 does not have an image
+29 03 2022 - 10:54:38.221 [JettyServerThreadPool-26] INFO  com.revature.main.Driver - OPTIONS request received for /reimbursements/4
+29 03 2022 - 10:54:38.223 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - PATCH request received for /reimbursements/4
+29 03 2022 - 10:54:38.224 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to update the status for the reimbursement 4
+29 03 2022 - 10:54:38.224 [JettyServerThreadPool-24] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+29 03 2022 - 10:54:38.272 [JettyServerThreadPool-16] INFO  com.revature.main.Driver - OPTIONS request received for /reimbursements
+29 03 2022 - 10:54:38.274 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /reimbursements
+29 03 2022 - 10:54:38.274 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to retrieve all reimbursements
+29 03 2022 - 10:54:38.274 [JettyServerThreadPool-24] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+29 03 2022 - 10:54:38.275 [JettyServerThreadPool-24] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+29 03 2022 - 10:54:38.301 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - All reimbursements retrieve successfully
+29 03 2022 - 10:54:38.306 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - GET request received for /reimbursements/5/image
+29 03 2022 - 10:54:38.306 [JettyServerThreadPool-13] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 5
+29 03 2022 - 10:54:38.337 [JettyServerThreadPool-24] INFO  com.revature.main.Driver - GET request received for /reimbursements/1/image
+29 03 2022 - 10:54:38.337 [JettyServerThreadPool-24] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 1
+29 03 2022 - 10:54:38.337 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements/5/image
+29 03 2022 - 10:54:38.337 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 5
+29 03 2022 - 10:54:38.363 [JettyServerThreadPool-24] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 1 does not have an image
+29 03 2022 - 10:54:38.367 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /reimbursements/3/image
+29 03 2022 - 10:54:38.367 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 3
+29 03 2022 - 10:54:38.392 [JettyServerThreadPool-15] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 3 does not have an image
+29 03 2022 - 10:54:38.395 [JettyServerThreadPool-19] INFO  com.revature.main.Driver - GET request received for /reimbursements/2/image
+29 03 2022 - 10:54:38.395 [JettyServerThreadPool-19] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 2
+29 03 2022 - 10:54:38.418 [JettyServerThreadPool-19] WARN  c.r.Controller.ExceptionController - The image attempted to be retrieve doesn't exist. Exception message: Reimbursement id 2 does not have an image
+29 03 2022 - 10:54:38.422 [JettyServerThreadPool-15] INFO  com.revature.main.Driver - GET request received for /reimbursements/4/image
+29 03 2022 - 10:54:38.422 [JettyServerThreadPool-15] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 4
+29 03 2022 - 10:54:38.451 [JettyServerThreadPool-13] INFO  com.revature.main.Driver - GET request received for /reimbursements/4/image
+29 03 2022 - 10:54:38.451 [JettyServerThreadPool-13] INFO  c.r.C.ReimbursementController - Trying to get an image for the reimbursement id: 4

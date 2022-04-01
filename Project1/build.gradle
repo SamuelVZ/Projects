@@ -9,6 +9,20 @@ repositories {
     mavenCentral()
 }
 
+jar {
+    manifest {
+        attributes 'Main-Class': 'com.revature.main.Driver'
+    }
+
+    from {
+        (configurations.runtimeClasspath).collect {
+            it.isDirectory() ? it : zipTree(it)
+        }
+    }
+
+    duplicatesStrategy 'exclude'
+}
+
 dependencies {
     implementation 'org.postgresql:postgresql:42.3.3'
     implementation 'io.javalin:javalin:4.3.0'

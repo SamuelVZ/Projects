@@ -32,11 +32,14 @@ public class ReimbursementService {
         this.responseReimbursementDto = new ResponseReimbursementDto();
     }
 
+    public ReimbursementService (ReimbursementDao mockDao) {
+        this.reimbursementDao = mockDao;
+    }
+
     public List<ResponseReimbursementDto> getAllReimbursements() throws SQLException {
             logger.info("A manager tried to get all the reimbursements");
 
             List<Reimbursement> reimbursements = reimbursementDao.getAllReimbursements();
-
 
             List<ResponseReimbursementDto> responseReimbursementDtos = new ArrayList<>();
 
@@ -97,13 +100,13 @@ public class ReimbursementService {
         return  dto;
     }
 
-    public InputStream getReimbursementImage(String reimbursementId, String userId) throws SQLException, ImageNotFoundException {
+    public InputStream getReimbursementImage(String reimbursementId) throws SQLException, ImageNotFoundException {
 
             try{
                 int iReimbursementId = Integer.parseInt(reimbursementId);
-                int iUserId = Integer.parseInt(userId);
 
-                InputStream is = reimbursementDao.getReimbursementImage(iUserId, iReimbursementId);
+
+                InputStream is = reimbursementDao.getReimbursementImage(iReimbursementId);
 
                 if(is == null){
                     throw new ImageNotFoundException("Reimbursement id " + reimbursementId + " does not have an image");
@@ -112,8 +115,8 @@ public class ReimbursementService {
                 return is;
 
             }catch (NumberFormatException e){
-                logger.warn("the user id: " + userId + " or reimbursement id: " + reimbursementId + " is invalid");
-                throw new IllegalArgumentException("the user id: " + userId + " or reimbursement id: " + reimbursementId + " are invalid");
+                logger.warn("the reimbursement id: " + reimbursementId + " is invalid");
+                throw new IllegalArgumentException("the reimbursement id: " + reimbursementId + " is invalid");
             }
 
     }
