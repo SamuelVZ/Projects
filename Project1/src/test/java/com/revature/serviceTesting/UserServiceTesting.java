@@ -7,6 +7,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import javax.security.auth.login.FailedLoginException;
+import java.security.NoSuchAlgorithmException;
 import java.sql.SQLException;
 
 import static org.mockito.Mockito.mock;
@@ -15,7 +16,7 @@ import static org.mockito.Mockito.when;
 public class UserServiceTesting {
 
     @Test
-    public void testLogin() throws FailedLoginException, SQLException {
+    public void testLogin() throws FailedLoginException, SQLException, NoSuchAlgorithmException {
 
         UserDao userDao = mock(UserDao.class);
 

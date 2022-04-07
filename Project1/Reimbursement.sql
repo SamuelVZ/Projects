@@ -52,9 +52,10 @@ CONSTRAINT fk_user_role foreign key(role_id) references user_roles(id) ON DELETE
 );
 
 INSERT INTO users (username, password, first_name, last_name, email, role_id)
-VALUES ('samuel1', 'password1', 'Samuel', 'Valencia', 'samuel@email.com', 2),
-('jane2', 'password2', 'Jane', 'Doe', 'jane@email.com', 1),
-('joe3', 'password3', 'Joe', 'Doe', 'Joe@email.com', 1);
+VALUES ('samuel1', '0b14d501a594442a01c6859541bcb3e8164d183d32937b851835442f69d5c94e', 'Samuel', 'Valencia', 'samuel@email.com', 2),
+('jane2', '6cf615d5bcaac778352a8f1f3360d23f02f34ec182e259897fd6ce485d7870d4', 'Jane', 'Doe', 'jane@email.com', 1),
+('joe3', '5906ac361a137e2d286465cd6588ebb5ac3f5ae955001100bc41577c3d751764', 'Joe', 'Doe', 'Joe@email.com', 1),
+('test1', 'b97873a40f73abedd8d685a7cd5e5f85e4a9cfb83eac26886640a0813850122b', 'test', 'test', 'test@email.com', 1);
 
 
 CREATE TABLE reimbursement (
@@ -67,7 +68,7 @@ description VARCHAR (200) NOT NULL,
 recepit_image BYTEA,
 
 employee_id INTEGER NOT NULL,
-manager_id INTEGER DEFAULT 1,
+manager_id INTEGER,
 status_id INTEGER NOT NULL DEFAULT 1,
 type_id INTEGER NOT NULL,
 
@@ -92,6 +93,8 @@ SELECT * FROM reimbursement_type;
 SELECT * FROM reimbursement_status;
 SELECT * FROM users;
 SELECT * FROM reimbursement;
+
+
 
 
 
@@ -126,5 +129,10 @@ MANAGER_ID = 1,
 DATE_RESOLVED = CURRENT_TIMESTAMP
 WHERE id = 1;
 
+
+SELECT RECEPIT_IMAGE
+FROM REIMBURSEMENT
+WHERE id = 4
+AND EMPLOYEE_ID = 2;
 
 */

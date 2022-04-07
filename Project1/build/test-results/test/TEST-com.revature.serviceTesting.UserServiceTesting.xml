@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.revature.serviceTesting.UserServiceTesting" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-04-01T05:05:44" hostname="DESKTOP-RVLR18L" time="0.58">
+<testsuite name="com.revature.serviceTesting.UserServiceTesting" tests="2" skipped="0" failures="0" errors="0" timestamp="2022-04-01T14:46:02" hostname="DESKTOP-RVLR18L" time="0.012">
   <properties/>
-  <testcase name="testLogin()" classname="com.revature.serviceTesting.UserServiceTesting" time="0.577"/>
-  <testcase name="testLogin_negative()" classname="com.revature.serviceTesting.UserServiceTesting" time="0.002"/>
-  <system-out><![CDATA[31 03 2022 - 22:05:44.578 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
-31 03 2022 - 22:05:44.598 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
+  <testcase name="testLogin()" classname="com.revature.serviceTesting.UserServiceTesting" time="0.011"/>
+  <testcase name="testLogin_negative()" classname="com.revature.serviceTesting.UserServiceTesting" time="0.001"/>
+  <system-out><![CDATA[01 04 2022 - 07:46:02.076 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
+01 04 2022 - 07:46:02.077 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

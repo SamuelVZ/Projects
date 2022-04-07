@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revature.serviceTesting.JWTServiceTesting" tests="3" skipped="0" failures="0" errors="0" timestamp="2022-04-01T14:46:00" hostname="DESKTOP-RVLR18L" time="0.595">
+  <properties/>
+  <testcase name="createJWTTest()" classname="com.revature.serviceTesting.JWTServiceTesting" time="0.516"/>
+  <testcase name="parseJwtTest()" classname="com.revature.serviceTesting.JWTServiceTesting" time="0.06"/>
+  <testcase name="parseJwtTest_negative()" classname="com.revature.serviceTesting.JWTServiceTesting" time="0.017"/>
+  <system-out><![CDATA[01 04 2022 - 07:46:01.096 [Test worker] INFO  com.revature.service.JWTService - Create a jwt for username:test1
+01 04 2022 - 07:46:01.483 [Test worker] INFO  com.revature.service.JWTService - Jws created for username:test1
+01 04 2022 - 07:46:01.492 [Test worker] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+01 04 2022 - 07:46:01.554 [Test worker] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+01 04 2022 - 07:46:01.555 [Test worker] WARN  com.revature.service.JWTService - Invalid JWT
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

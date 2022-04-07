@@ -1,2 +1,13 @@
-„31 03 2022 - 22:05:44.578 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
-„31 03 2022 - 22:05:44.598 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
+q01 04 2022 - 07:46:01.096 [Test worker] INFO  com.revature.service.JWTService - Create a jwt for username:test1
+p01 04 2022 - 07:46:01.483 [Test worker] INFO  com.revature.service.JWTService - Jws created for username:test1
+o01 04 2022 - 07:46:01.492 [Test worker] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+o01 04 2022 - 07:46:01.554 [Test worker] INFO  com.revature.service.JWTService - Parsing the jwt for a request
+]01 04 2022 - 07:46:01.555 [Test worker] WARN  com.revature.service.JWTService - Invalid JWT
+…01 04 2022 - 07:46:02.059 [Test worker] WARN  c.r.service.ReimbursementService - the status id: a or reimbursement id: a is invalid
+ƒ01 04 2022 - 07:46:02.060 [Test worker] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+€01 04 2022 - 07:46:02.061 [Test worker] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+ƒ01 04 2022 - 07:46:02.063 [Test worker] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+~01 04 2022 - 07:46:02.063 [Test worker] WARN  c.r.service.ReimbursementService - Service layer - the client id: a is invalid
+u01 04 2022 - 07:46:02.064 [Test worker] WARN  c.r.service.ReimbursementService - the reimbursement id: a is invalid
+„01 04 2022 - 07:46:02.076 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1
+„01 04 2022 - 07:46:02.077 [Test worker] INFO  com.revature.service.UserService - User service login attempted with username: test1

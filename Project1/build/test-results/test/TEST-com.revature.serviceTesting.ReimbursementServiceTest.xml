@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.revature.serviceTesting.ReimbursementServiceTest" tests="8" skipped="0" failures="0" errors="0" timestamp="2022-04-01T14:46:01" hostname="DESKTOP-RVLR18L" time="0.492">
+  <properties/>
+  <testcase name="addReimbursementByUserId_test_negative()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.467"/>
+  <testcase name="getReimbursementImage_negative_nullimage()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.015"/>
+  <testcase name="updateStatus()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.001"/>
+  <testcase name="updateStatus_negative()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.001"/>
+  <testcase name="getAllReimbursementsByEmployeeID()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.001"/>
+  <testcase name="getAllReimbursements()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.0"/>
+  <testcase name="getAllReimbursementsByEmployeeID_negative()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.001"/>
+  <testcase name="getReimbursementImage_negative_invalidString()" classname="com.revature.serviceTesting.ReimbursementServiceTest" time="0.001"/>
+  <system-out><![CDATA[01 04 2022 - 07:46:02.059 [Test worker] WARN  c.r.service.ReimbursementService - the status id: a or reimbursement id: a is invalid
+01 04 2022 - 07:46:02.060 [Test worker] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+01 04 2022 - 07:46:02.061 [Test worker] INFO  c.r.service.ReimbursementService - A manager tried to get all the reimbursements
+01 04 2022 - 07:46:02.063 [Test worker] INFO  c.r.service.ReimbursementService - A employee tried to get all their reimbursements
+01 04 2022 - 07:46:02.063 [Test worker] WARN  c.r.service.ReimbursementService - Service layer - the client id: a is invalid
+01 04 2022 - 07:46:02.064 [Test worker] WARN  c.r.service.ReimbursementService - the reimbursement id: a is invalid
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
